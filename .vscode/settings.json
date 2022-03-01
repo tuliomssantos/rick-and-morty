@@ -1,0 +1,15 @@
+{
+  "files.exclude": {},
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "npm.validate.enable": false,
+  "json.schemas": [
+    {
+      "fileMatch": ["cypress.json"],
+      "url": "https://on.cypress.io/cypress.schema.json"
+    }
+  ]
+}
