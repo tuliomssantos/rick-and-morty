@@ -22,7 +22,6 @@ export const DrawerButton = styled(MaterialIconButton)``
 
 export const Box = styled(MaterialButtonBase)`
   flex-grow: 1;
-  cursor: default;
 `
 
 export const WrapperImage = styled('div')(

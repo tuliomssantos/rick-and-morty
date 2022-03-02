@@ -1,8 +1,12 @@
+import { useRouter } from 'next/router'
+
 import Image from 'next/image'
 
 import * as S from './styles'
 
 export default function Header() {
+  const router = useRouter()
+
   return (
     <S.Wrapper>
       <S.AppBar position="static" enableColorOnDark>
@@ -16,7 +20,16 @@ export default function Header() {
               height={40}
             />
           </S.DrawerButton>
-          <S.Box>
+          <S.Box
+            onClick={() => {
+              router.push({
+                pathname: '/',
+                query: {
+                  page: 1,
+                },
+              })
+            }}
+          >
             <S.WrapperImage>
               <Image
                 priority

@@ -45,6 +45,16 @@ export default function CharactersTemplate() {
   )
 
   useEffect(() => {
+    if (router.query.page) {
+      setParams(preState =>
+        update(preState, {
+          page: { $set: parseInt(router.query.page as string) },
+        })
+      )
+    }
+  }, [router.query.page])
+
+  useEffect(() => {
     const startChangeRouteHandler = () => {
       setLoading(true)
     }
