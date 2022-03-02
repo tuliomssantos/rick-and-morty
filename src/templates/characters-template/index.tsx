@@ -34,6 +34,8 @@ export default function CharactersTemplate() {
 
   const [isLoading, setLoading] = useState(false)
 
+  const [searchLoading, setSearchLoading] = useState(false)
+
   const { data } = useQuery<CharactersData, Error>(
     ['GetCharacters', params],
     async () => await fetchCharacters(params),
@@ -61,6 +63,7 @@ export default function CharactersTemplate() {
 
     const endChangeRouteHandler = () => {
       setLoading(false)
+      setSearchLoading(false)
     }
 
     Router.events.on('routeChangeStart', startChangeRouteHandler)
@@ -97,10 +100,18 @@ export default function CharactersTemplate() {
     router.push(`/?page=${1}`, undefined, { shallow: true })
   }
 
+  const handleSearchLoading = () => {
+    setSearchLoading(true)
+  }
+
   return (
     <Layout>
       <S.Wrapper>
-        <SearchField handleSearchChange={handleSearchChange} />
+        <SearchField
+          handleSearchChange={handleSearchChange}
+          handleSearchLoading={handleSearchLoading}
+          searchLoading={searchLoading}
+        />
         <S.DataGridWrapper display={display}>
           {isLoading ? (
             <Loading />

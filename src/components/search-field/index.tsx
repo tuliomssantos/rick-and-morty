@@ -1,6 +1,8 @@
 import { useDebouncedCallback } from 'use-debounce'
 
-import { TextField, InputAdornment } from '@mui/material'
+import TextField from '@mui/material/TextField'
+import InputAdornment from '@mui/material/InputAdornment'
+import CircularProgress from '@mui/material/CircularProgress'
 
 import SearchIcon from '@mui/icons-material/Search'
 
@@ -8,9 +10,15 @@ import * as S from './styles'
 
 export type SearchFieldProps = {
   handleSearchChange: (name: string) => void
+  handleSearchLoading: () => void
+  searchLoading: boolean
 }
 
-export default function SearchField({ handleSearchChange }: SearchFieldProps) {
+export default function SearchField({
+  handleSearchChange,
+  handleSearchLoading,
+  searchLoading,
+}: SearchFieldProps) {
   const debounced = useDebouncedCallback(
     // function
     value => {
@@ -30,10 +38,13 @@ export default function SearchField({ handleSearchChange }: SearchFieldProps) {
               <SearchIcon />
             </InputAdornment>
           ),
+          // endAdornment: {searchLoading ? <CircularProgress /> : null},
+          endAdornment: <>{searchLoading ? <CircularProgress /> : null}</>,
         }}
         variant="outlined"
         fullWidth
         onChange={e => {
+          handleSearchLoading()
           debounced(e.target.value)
         }}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -42,9 +53,6 @@ export default function SearchField({ handleSearchChange }: SearchFieldProps) {
             e.target.blur()
           }
         }}
-        // onChange={e => {
-        //   handleSearchChange(e.target.value)
-        // }}
       />
     </S.Wrapper>
   )
