@@ -1,4 +1,6 @@
+import Typography from '@mui/material/Typography'
 import Header from '../header'
+
 import * as S from './styles'
 
 export type LayoutProps = {
@@ -11,7 +13,19 @@ export default function Layout({ children }: LayoutProps) {
       <S.ContentWrapper>
         <Header />
         {children}
-        <S.Footer>Footer</S.Footer>
+        <S.Footer>
+          <S.FooterContentWrapper>
+            <Typography variant="body2">
+              Made with ❤️ by&nbsp;
+              <S.GithubLink href="https://github.com/tuliomssantos">
+                tuliomssantos
+              </S.GithubLink>
+            </Typography>
+            <Typography variant="body2">
+              For educational purposes only
+            </Typography>
+          </S.FooterContentWrapper>
+        </S.Footer>
       </S.ContentWrapper>
     </S.PageContainer>
   )
