@@ -1,10 +1,10 @@
 import { renderWithTheme } from '@/utils/renderWithTeme'
 
-import {{pascalCase name}} from '.'
+import Typography from '.'
 
-describe('<{{pascalCase name}} />', () => {
+describe('<Typography />', () => {
   it('should render correctly', () => {
-    const { container } = renderWithTheme(<{{pascalCase name}} />)
+    const { container } = renderWithTheme(<Typography />)
 
     expect(container.firstChild).toMatchSnapshot()
   })

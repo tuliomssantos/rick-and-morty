@@ -1,10 +1,10 @@
 import { renderWithTheme } from '@/utils/renderWithTeme'
 
-import {{pascalCase name}} from '.'
+import SearchField from '.'
 
-describe('<{{pascalCase name}} />', () => {
+describe('<SearchField />', () => {
   it('should render correctly', () => {
-    const { container } = renderWithTheme(<{{pascalCase name}} />)
+    const { container } = renderWithTheme(<SearchField />)
 
     expect(container.firstChild).toMatchSnapshot()
   })

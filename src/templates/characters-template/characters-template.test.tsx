@@ -1,10 +1,10 @@
 import { renderWithTheme } from '@/utils/renderWithTeme'
 
-import {{pascalCase name}} from '.'
+import CharactersTemplate from '.'
 
-describe('<{{pascalCase name}} />', () => {
+describe('<CharactersTemplate />', () => {
   it('should render correctly', () => {
-    const { container } = renderWithTheme(<{{pascalCase name}} />)
+    const { container } = renderWithTheme(<CharactersTemplate />)
 
     expect(container.firstChild).toMatchSnapshot()
   })

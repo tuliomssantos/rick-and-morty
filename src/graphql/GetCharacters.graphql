@@ -1,0 +1,18 @@
+query GetCharacters($page: Int, $filter: FilterCharacter) {
+  characters(page: $page, filter: $filter) {
+    info {
+      count
+      pages
+    }
+    results {
+      name
+      status
+      image
+      location {
+        name
+      }
+      species
+      id
+    }
+  }
+}
