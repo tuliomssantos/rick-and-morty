@@ -2,6 +2,8 @@
 
 Simple graphql based app.
 
+[Avaiable here 🚀](https://rick-and-morty-rosy-gamma.vercel.app/)
+
 ## Running localy :computer:
 
 Add a .env.local file with the following content:

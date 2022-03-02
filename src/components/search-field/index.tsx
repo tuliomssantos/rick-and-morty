@@ -36,6 +36,12 @@ export default function SearchField({ handleSearchChange }: SearchFieldProps) {
         onChange={e => {
           debounced(e.target.value)
         }}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onKeyUp={(e: any) => {
+          if (e.key === 'Enter') {
+            e.target.blur()
+          }
+        }}
         // onChange={e => {
         //   handleSearchChange(e.target.value)
         // }}
