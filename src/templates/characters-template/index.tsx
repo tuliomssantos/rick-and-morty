@@ -159,7 +159,12 @@ export const Loading = () => (
   <>
     {Array.from({ length: 12 }).map((_, index) => (
       <S.Card key={index}>
-        <Skeleton sx={{ height: 190 }} animation="wave" variant="rectangular" />
+        <Skeleton
+          sx={{ height: 190 }}
+          animation="wave"
+          variant="rectangular"
+          data-testid="rectangular-skeleton"
+        />
         <S.CardContent>
           <Skeleton variant="text" height={32} />
 
