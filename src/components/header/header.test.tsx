@@ -1,11 +1,19 @@
-import { renderWithTheme } from '@/utils/renderWithTeme'
+import { renderWithTheme } from '@/src/utils/renderWithTeme'
+
+import { screen } from '@testing-library/react'
 
 import Header from '.'
 
 describe('<Header />', () => {
-  it('should render correctly', () => {
-    const { container } = renderWithTheme(<Header />)
+  it('should render the menu-button', () => {
+    renderWithTheme(<Header />)
 
-    expect(container.firstChild).toMatchSnapshot()
+    expect(screen.getByTestId('menu-button')).toBeInTheDocument()
+  })
+
+  it('should render the menu-button', () => {
+    renderWithTheme(<Header />)
+
+    expect(screen.getByTestId('logo')).toBeInTheDocument()
   })
 })

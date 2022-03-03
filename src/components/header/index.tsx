@@ -8,10 +8,10 @@ export default function Header() {
   const router = useRouter()
 
   return (
-    <S.Wrapper>
+    <S.Wrapper data-testid="header">
       <S.AppBar position="static" enableColorOnDark>
         <S.Toolbar>
-          <S.DrawerButton>
+          <S.DrawerButton data-testid="menu-button">
             <Image
               priority
               src="/images/portal.png"
@@ -30,7 +30,7 @@ export default function Header() {
               })
             }}
           >
-            <S.WrapperImage>
+            <S.WrapperImage data-testid="logo">
               <Image
                 priority
                 src="/images/rick_and_morty_logo.svg"
