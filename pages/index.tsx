@@ -1,7 +1,7 @@
 import type { NextPage, GetServerSideProps } from 'next'
 
-import { fetchCharacters } from '@/services/get-characters'
-import { numberfy } from '@/utils/numberfy'
+import { fetchCharacters } from '@/src/services/get-characters'
+import { numberfy } from '@/src/utils/numberfy'
 import { dehydrate, QueryClient } from 'react-query'
 
 import { FetchCharactersInput } from '@/src/types/'

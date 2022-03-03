@@ -4,8 +4,7 @@ import Container from '@mui/material/Container'
 
 import MaterialCard from '@mui/material/Card'
 import MaterialCardContent from '@mui/material/CardContent'
-
-import Typography from '@/src/components/typography'
+import Typography from '@mui/material/Typography'
 
 export const Wrapper = styled(Container)(
   ({ theme }) => `

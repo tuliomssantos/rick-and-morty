@@ -6,8 +6,8 @@ import { useQuery } from 'react-query'
 
 import update from 'immutability-helper'
 
-import Layout from '@/components/layout'
-import SearchField from '@/components/search-field'
+import Layout from '@/src/components/layout'
+import SearchField from '@/src/components/search-field'
 
 import Typography from '@mui/material/Typography'
 import CardActionArea from '@mui/material/CardActionArea'
@@ -27,7 +27,7 @@ export default function CharactersTemplate() {
   const router = useRouter()
 
   const [params, setParams] = useState<FetchCharactersInput>({
-    page: parseInt(router.query.page as string) || 1,
+    page: parseInt(router?.query.page as string) || 1,
   })
 
   const [display] = useState<DisplayStateType>('rows')
@@ -47,14 +47,14 @@ export default function CharactersTemplate() {
   )
 
   useEffect(() => {
-    if (router.query.page) {
+    if (router?.query.page) {
       setParams(preState =>
         update(preState, {
-          page: { $set: parseInt(router.query.page as string) },
+          page: { $set: parseInt(router?.query.page as string) },
         })
       )
     }
-  }, [router.query.page])
+  }, [router?.query.page])
 
   useEffect(() => {
     const startChangeRouteHandler = () => {

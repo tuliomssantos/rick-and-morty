@@ -10,9 +10,9 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-import { createEmotionCache } from '@/utils/createEmotionCache'
+import { createEmotionCache } from '@/src/utils/createEmotionCache'
 
-import { theme, CustomThemeProvider } from '@/styles/theme'
+import { theme, CustomThemeProvider } from '@/src/styles/theme'
 
 const clientSideEmotionCache = createEmotionCache()
 
