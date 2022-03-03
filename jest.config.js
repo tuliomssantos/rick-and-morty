@@ -10,6 +10,7 @@ const customJestConfig = {
     '^@/src/(.*)$': '<rootDir>/src/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
+  clearMocks: true,
   // collectCoverage: true,
   // collectCoverageFrom: ['src/**/*.[jt]s?(x)'],
   // coverageThreshold: {

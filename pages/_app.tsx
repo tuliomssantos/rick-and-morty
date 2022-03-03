@@ -14,6 +14,12 @@ import { createEmotionCache } from '@/src/utils/createEmotionCache'
 
 import { theme, CustomThemeProvider } from '@/src/styles/theme'
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+  import('../src/mocks').then(({ setupMocks }) => {
+    setupMocks()
+  })
+}
+
 const clientSideEmotionCache = createEmotionCache()
 
 export interface MyAppProps extends AppProps {
