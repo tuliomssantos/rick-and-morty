@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
       <S.ContentWrapper>
         <Header />
         {children}
-        <S.Footer>
+        <S.Footer data-testid="footer">
           <S.FooterContentWrapper>
             <Typography variant="body2">
               Made with ❤️ by&nbsp;
